@@ -1,0 +1,145 @@
+<Consent xmlns="http://hl7.org/fhir">
+    <id value="34150a23-b1c8-404f-874f-e042a30435d2" />
+    <meta>
+        <lastUpdated value="2020-12-11T09:39:07+00:00" />
+        <profile value="https://www.medizininformatik-initiative.de/fhir/ext/modul-consent/StructureDefinition/Consent" />
+    </meta>
+    <!--  Verweis auf die zugehörige Domain (hier: Studie)  -->
+    <extension url="http://fhir.de/ConsentManagement/StructureDefinition/DomainReference">
+        <extension url="domain">
+            <valueReference>
+                <reference value="ResearchStudy/d7a65ce8-2810-401a-b0db-70782a7b19a6" />
+            </valueReference>
+        </extension>
+        <extension url="status">
+            <valueCoding>
+                <system value="http://hl7.org/fhir/publication-status" />
+                <code value="active" />
+            </valueCoding>
+        </extension>
+    </extension>
+    <!--  Finalisierungsstatus  -->
+    <status value="active" />
+    <!--  Einwilligung zur Verwendung, hier: Forschung & Lehre -->
+    <scope>
+        <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/consentscope" />
+            <code value="research" />
+        </coding>
+    </scope>
+    <scope>
+        <coding>
+            <system value="https://github.com/Larissanna/Digitale-Einwilligung/blob/main/scope/ScopeExtension.json" />
+            <code value="Education" />
+        </coding>
+    </scope>
+    <!--  Consent-Kategorie, hier: Einwilligung  -->
+    <category>
+        <coding>
+            <system value="http://loinc.org" />
+            <code value="59284-0" />
+        </coding>
+    </category>
+    <!--  Patient, für den die Einwilligungserklärung gilt  -->
+    <patient>
+        <reference value="Patient/9b4a702d-162c-428a-8c5d-8b98af21b693" />
+    </patient>
+    <!--  Zeitpunkt der Einwilligung  -->
+    <dateTime value="2020-09-01" />
+    <ResearchStudy>     
+        <display value="Studie zur Schlafforschung" />
+    </ResearchStudy>
+    <!--  Verweis auf die Questionnaire-Response, aus der sich dieser Consent ergibt  -->
+    <sourceReference>
+        <reference value="QuestionnaireResponse/02eac854-6a2e-48f9-88d7-edd04faff81c" />
+    </sourceReference>
+     <!--  durch diesen Consent geltende Policy/Policies bzw Module -->
+    <policy>
+        <!--  z.B. MII Broad Consent Version 1.6f  -->
+        <uri value="urn:oid:2.16.840.1.113883.3.1937.777.24.2.1791" />
+    </policy>
+    <!--  XacML-Repräsentation  -->
+    <policyRule>
+        <extension url="http://fhir.de/ConsentManagement/StructureDefinition/Xacml">
+            <valueBase64Binary value="TUlJIEJDIEV4YW1wbGUgWEFDTUw=" />
+        </extension>
+        <text value="siehe eingebettetes XACML" />
+    </policyRule>
+    <!--  In diesem Beispiel repräsentiert jede Provision eine Frage/Antwort bzw. Teilaussage einer Frage/Antwort in der Einwilligungserklärung eines Patienten.  -->
+    <provision>
+        <!--  per default ist alles verweigert. was nicht in den Unterelementen erlaubt ist  -->
+        <type value="deny" />
+        <!--  längster Zeitraum der Gültigkeit  -->
+        <period>
+            <start value="2020-09-01" />
+            <end value="2050-08-31" />
+        </period>
+     <provision>
+            <!--  ergibt sich aus der Antwort "Rekontaktierung für eine Vergütung"   -->
+            <type value="permit" />
+            <!--  5 Jahre gültig  -->
+            <period>
+                <start value="2020-09-01" />
+                <end value="2025-08-31" />
+            </period>
+            <code>
+                <coding>
+                    <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.3" />
+                    <code value="22.16.840.1.113883.3.1937.777.24.5.3.32" />
+                    <display value="Rekontaktierung_Vergütung" />
+                </coding>
+            </code>
+        </provision>
+        <provision>
+            <!--  ergibt sich aus der Antwort "Informationen über weitere Studien erhalten"-->
+            <type value="permit" />
+            <!-- 30 Jahre gültig  -->
+            <period>
+                <start value="2020-09-01" />
+                <end value="2050-08-31" />
+            </period>
+            <code>
+                <coding>
+                    <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.3" />
+                    <code value="2.16.840.1.113883.3.1937.777.24.5.3.29" />
+                    <display value="Rekontaktierung_weitere_Studien" />
+                </coding>
+            </code>
+        </provision>
+        <provision>
+            <!--  ergibt sich aus der Antwort "Rekontaktierung aufgrund Zusatzbefund  -->
+            <type value="permit" />
+            <!--  30 Jahre gültig  -->
+            <period>
+                <start value="2020-09-01" />
+                <end value="2050-08-31" />
+            </period>
+            <code>
+                <coding>
+                    <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.3" />
+                    <code value="2.16.840.1.113883.3.1937.777.24.5.3.30" />
+                    <display value="Rekontaktierung_Zusatzbefund" />
+                </coding>
+            </code>
+        </provision>
+    </provision>
+  <Provenance xmlns="http://hl7.org/fhir">
+    <id value="4ac851a6-e0dd-4f9b-a19f-45ac0ae0bea0" />
+    <meta>
+        <lastUpdated value="2021-02-08T14:21:07.5320994+00:00" />
+        <profile value="http://fhir.de/ConsentManagement/StructureDefinition/Provenance" />
+    </meta>   
+    <signature>
+        <type>
+            <system value="urn:iso-astm:E1762-95:2013" />
+            <code value="1.2.840.10065.1.12.1.7" />
+            <display value="Consent Signature" />
+        </type>
+        <when value="2020-12-11T09:39:07+00:00" />
+        <who>
+            <reference value="Patient/9b4a702d-16" />
+        </who>
+        <data value="iVBO.....[base64-codiert, z.B. Scan der Unterschrift]" />
+    </signature>
+  </Provenance>
+</Consent>
