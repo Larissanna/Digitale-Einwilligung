@@ -1,1 +1,124 @@
-<h1>Hello!</h1>
+{
+    "resourceType": "StructureDefinition",
+    "url": "https://example.org/fhir/StructureDefinition/ScopeExtension",
+    "version": "2.0",
+    "name": "ScopeExtension",
+    "status": "draft",
+    "date": "2022-08-16",
+    "description": "Erweiterung der Nutzungszwecke",
+    "fhirVersion": "4.0.1",
+    "kind": "complex-type",
+    "abstract": false,
+    "context": [
+      {
+        "type": "element",
+        "expression": "Consent.scope"
+      }
+    ],
+    "type": "Extension",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+    "derivation": "constraint",
+    "differential": {
+      "element": [
+        {
+          "id": "Extension",
+          "path": "Extension",
+          "min": 1
+        },
+        {
+          "id": "Extension.extension",
+          "path": "Extension.extension",
+          "slicing": {
+            "discriminator": [
+              {
+                "type": "value",
+                "path": "url"
+              }
+            ],
+            "rules": "open"
+          },
+          "min": 3
+        },
+        {
+          "id": "Extension.extension:Education",
+          "path": "Extension.extension",
+          "sliceName": "Education",
+          "short": "Lehre",
+          "definition": "Bei der Freigabe von Daten zur Lehre erfolgt die Verwendung und Verarbeitung der Daten ausschließlich zum Zwecke der Lehre und Ausbildung von Schülern, Studierenden und Forschenden. Eine gewerbliche und kommerzielle Nutzung wird ausdrücklich ausgeschlossen.",
+          "min": 1
+        },
+        {
+          "id": "Extension.extension:Education.url",
+          "path": "Extension.extension.url",
+          "fixedUri": "Education"
+        },
+        {
+          "id": "Extension.extension:Education.value[x]",
+          "path": "Extension.extension.value[x]",
+          "min": 1,
+          "type": [
+            {
+              "code": "boolean"
+            }
+          ]
+        },
+        {
+          "id": "Extension.extension:MedicalProductDevelopment",
+          "path": "Extension.extension",
+          "sliceName": "MedicalProductDevelopment",
+          "short": "Medizinproduktentwicklung",
+          "definition": "Bei der Freigabe von Daten für die Medizinproduktentwicklung werden Die Daten zur Entwicklung und kontinuierlichen Verbesserung von zertifizierten Medizinprodukten herangezogen. Hierbei kann ein Beitrag zur Verbesserung der medizinischen Diagnose, Überwachung, Progonose, Behandlung oder Linderung von Krankheiten geleistet werden, da diese für die Anwendung beim Menschen bestimmt sind und diese nur durch entsprechende Erfahrungen weiterentwickelt und verbessert werden können.",
+          "min": 1,
+          "max": "1"
+        },
+        {
+          "id": "Extension.extension:MedicalProductDevelopment.url",
+          "path": "Extension.extension.url",
+          "fixedUri": "MedicalProductDevelopment"
+        },
+        {
+          "id": "Extension.extension:MedicalProductDevelopment.value[x]",
+          "path": "Extension.extension.value[x]",
+          "min": 1,
+          "type": [
+            {
+              "code": "boolean"
+            }
+          ]
+        },
+        {
+          "id": "Extension.extension:Statistic",
+          "path": "Extension.extension",
+          "sliceName": "Statistic",
+          "short": "Statistische Auswertung",
+          "definition": "Bei der Freigabe von Daten zur statistischen Auswertung werden diese zur Erstellung von Statistiken durch staatlich anerkannte Institutionen (Statistische Bundesamt, Robert-Koch-Institut) herangezogen. Jene Statistiken stellen einen wichtigen Beitrag zu einer demokratischen Gesellschaft dar, da diese der Regierung, der Wirtschaft und der Öffentlichkeit Informationenüber die soziale und epidemiologische Lage, die demographische Entwicklung und den Gesundheitszustand der Bevölkerung liefern.",
+          "min": 1,
+          "max": "1"
+        },
+        {
+          "id": "Extension.extension:Statistic.url",
+          "path": "Extension.extension.url",
+          "fixedUri": "Statistic"
+        },
+        {
+          "id": "Extension.extension:Statistic.value[x]",
+          "path": "Extension.extension.value[x]",
+          "type": [
+            {
+              "code": "boolean"
+            }
+          ]
+        },
+        {
+          "id": "Extension.url",
+          "path": "Extension.url",
+          "fixedUri": "https://example.org/fhir/StructureDefinition/ScopeExtension"
+        },
+        {
+          "id": "Extension.value[x]",
+          "path": "Extension.value[x]",
+          "max": "0"
+        }
+      ]
+    }
+  }
