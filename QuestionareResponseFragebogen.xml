@@ -5,7 +5,6 @@
         <profile value="http://fhir.de/ConsentManagement/StructureDefinition/QuestionnaireResponse" />
     </meta>
     <language value="de" />
-    <!--  canonical URL des zugrunde liegenden Questionnaires (Profil QuestionnaireComposed)  -->
     <questionnaire value="https://github.com/Larissanna/Digitale-Einwilligung/QuestionnaireResponse/Stop-Bang-Fragebogen" />
     <!--  Finalisierungsstatus  -->
     <status value="completed" />
