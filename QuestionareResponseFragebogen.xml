@@ -1,0 +1,107 @@
+<QuestionnaireResponse xmlns="https://github.com/Larissanna/Digitale-Einwilligung/QuestionnaireResponse">
+    <id value="02eac854-6a2e-48f9-2222" />
+    <meta>
+        <lastUpdated value="2022-12-11T09:39:07+00:00" />
+        <profile value="http://fhir.de/ConsentManagement/StructureDefinition/QuestionnaireResponse" />
+    </meta>
+    <language value="de" />
+    <!--  canonical URL des zugrunde liegenden Questionnaires (Profil QuestionnaireComposed)  -->
+    <questionnaire value="https://github.com/Larissanna/Digitale-Einwilligung/QuestionnaireResponse/Stop-Bang-Fragebogen" />
+    <!--  Finalisierungsstatus  -->
+    <status value="completed" />
+    <!--  Patient, für den die Einwilligungserklärung gilt  -->
+    <subject>
+        <reference value="Patient/9b4a702d-162c-428a-8c5d-8b98af21b693" />
+        <display value="Studienpatient Nr. A38" />
+    </subject>
+    <!--  Ausfülldatum  -->
+    <authored value="2022-08-08" />
+    <!--  ausfüllende Person  -->
+    <author>
+        <reference value="RelatedPerson/5645464" />
+    </author>
+    <!--  Person, von der die Einwilligungsangaben stammen  -->
+    <source>
+        <reference value="Patient/9b4a702d-162c-428a-8c5d-8b98af21b693" />
+    </source>
+    <!--  Antworten  -->
+    <item>
+        <linkId value="21" />
+        <answer>
+            <valueCoding>
+                <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.2" />
+                <code value="2.16.840.1.113883.3.1937.777.24.5.2.1" />
+                <display value="g&#252;ltig" />
+            </valueCoding>
+        </answer>
+    </item>
+    <item>
+        <linkId value="22" />
+        <answer>
+            <valueCoding>
+                <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.2" />
+                <code value="2.16.840.1.113883.3.1937.777.24.5.2.1" />
+                <display value="g&#252;ltig" />
+            </valueCoding>
+        </answer>
+    </item>
+    <item>
+        <linkId value="23" />
+        <answer>
+            <valueCoding>
+                <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.2" />
+                <code value="2.16.840.1.113883.3.1937.777.24.5.2.1" />
+                <display value="g&#252;ltig" />
+            </valueCoding>
+        </answer>
+    </item>
+    <item>
+        <linkId value="24" />
+        <answer>
+            <valueCoding>
+                <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.2" />
+                <code value="2.16.840.1.113883.3.1937.777.24.5.2.1" />
+                <display value="g&#252;ltig" />
+            </valueCoding>
+        </answer>
+    </item><item>
+        <linkId value="25" />
+        <answer>
+            <valueCoding>
+                <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.2" />
+                <code value="2.16.840.1.113883.3.1937.777.24.5.2.1" />
+                <display value="g&#252;ltig" />
+            </valueCoding>
+        </answer>
+    </item>
+    <item>
+        <linkId value="26" />
+        <answer>
+            <valueCoding>
+                <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.2" />
+                <code value="2.16.840.1.113883.3.1937.777.24.5.2.1" />
+                <display value="g&#252;ltig" />
+            </valueCoding>
+        </answer>
+    </item>
+    <item>
+        <linkId value="27" />
+        <answer>
+            <valueCoding>
+                <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.2" />
+                <code value="2.16.840.1.113883.3.1937.777.24.5.2.1" />
+                <display value="g&#252;ltig" />
+            </valueCoding>
+        </answer>
+    </item>
+    <item>
+        <linkId value="28" />
+        <answer>
+            <valueCoding>
+                <system value="urn:oid:2.16.840.1.113883.3.1937.777.24.5.2" />
+                <code value="2.16.840.1.113883.3.1937.777.24.5.2.1" />
+                <display value="g&#252;ltig" />
+            </valueCoding>
+        </answer>
+    </item>
+</QuestionnaireResponse>
