@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://example.org/fhir/StructureDefinition/OrganizationType" />
+  <name value="OrganizationType" />
+  <status value="draft" />
+  <description value="Erweitern um öffentliche und private Forschung" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Organization.type" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="2" />
+    </element>
+    <element id="Extension.extension:PublicResearch">
+      <path value="Extension.extension" />
+      <sliceName value="PublicResearch" />
+      <short value="öffentliche Forschung" />
+      <definition value="öffentliche Forschung ist ein Sammelbegriff für forschende Einrichtungen aus der Wissenschaft, wie der universitären Forschung, oder aus öffentlichen Einrichtungen wie beispielsweise Forschungsgesellschaften, Instituten oder Behörden." />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:PublicResearch.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="PublicResearch" />
+    </element>
+    <element id="Extension.extension:PublicResearch.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:PrivateResearch">
+      <path value="Extension.extension" />
+      <sliceName value="PrivateResearch" />
+      <short value="Private Forschung" />
+      <definition value="private Forschung umfasst private&#xA;Einrichtungen mit kommerzieller und nicht-kommerzieller Ausrichtung, die nach wissenschaftlichen Grundregeln Forschung&#xA;betreiben. Beispiele sind Arzneimittelhersteller, Biotech-Firmen, Lifescience-Unternehmen, aber auch private Stiftungen." />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:PrivateResearch.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="PrivateResearch" />
+    </element>
+    <element id="Extension.extension:PrivateResearch.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://example.org/fhir/StructureDefinition/OrganizationType" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

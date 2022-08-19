@@ -1,0 +1,91 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://example.org/fhir/StructureDefinition/OrganizationType",
+  "name": "OrganizationType",
+  "status": "draft",
+  "description": "Erweitern um öffentliche und private Forschung",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Organization.type"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Extension.extension:PublicResearch",
+        "path": "Extension.extension",
+        "sliceName": "PublicResearch",
+        "short": "öffentliche Forschung",
+        "definition": "öffentliche Forschung ist ein Sammelbegriff für forschende Einrichtungen aus der Wissenschaft, wie der universitären Forschung, oder aus öffentlichen Einrichtungen wie beispielsweise Forschungsgesellschaften, Instituten oder Behörden.",
+        "min": 1
+      },
+      {
+        "id": "Extension.extension:PublicResearch.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "PublicResearch"
+      },
+      {
+        "id": "Extension.extension:PublicResearch.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:PrivateResearch",
+        "path": "Extension.extension",
+        "sliceName": "PrivateResearch",
+        "short": "Private Forschung",
+        "definition": "private Forschung umfasst private\nEinrichtungen mit kommerzieller und nicht-kommerzieller Ausrichtung, die nach wissenschaftlichen Grundregeln Forschung\nbetreiben. Beispiele sind Arzneimittelhersteller, Biotech-Firmen, Lifescience-Unternehmen, aber auch private Stiftungen.",
+        "min": 1
+      },
+      {
+        "id": "Extension.extension:PrivateResearch.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "PrivateResearch"
+      },
+      {
+        "id": "Extension.extension:PrivateResearch.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://example.org/fhir/StructureDefinition/OrganizationType"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

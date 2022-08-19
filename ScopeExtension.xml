@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://example.org/fhir/StructureDefinition/ScopeExtension" />
+  <version value="2.0" />
+  <name value="ScopeExtension" />
+  <status value="draft" />
+  <date value="2022-08-16" />
+  <description value="Erweiterung der Nutzungszwecke" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Consent.scope" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="3" />
+    </element>
+    <element id="Extension.extension:Education">
+      <path value="Extension.extension" />
+      <sliceName value="Education" />
+      <short value="Lehre" />
+      <definition value="Bei der Freigabe von Daten zur Lehre erfolgt die Verwendung und Verarbeitung der Daten ausschließlich zum Zwecke der Lehre und Ausbildung von Schülern, Studierenden und Forschenden. Eine gewerbliche und kommerzielle Nutzung wird ausdrücklich ausgeschlossen." />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:Education.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="Education" />
+    </element>
+    <element id="Extension.extension:Education.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:MedicalProductDevelopment">
+      <path value="Extension.extension" />
+      <sliceName value="MedicalProductDevelopment" />
+      <short value="Medizinproduktentwicklung" />
+      <definition value="Bei der Freigabe von Daten für die Medizinproduktentwicklung werden Die Daten zur Entwicklung und kontinuierlichen Verbesserung von zertifizierten Medizinprodukten herangezogen. Hierbei kann ein Beitrag zur Verbesserung der medizinischen Diagnose, Überwachung, Progonose, Behandlung oder Linderung von Krankheiten geleistet werden, da diese für die Anwendung beim Menschen bestimmt sind und diese nur durch entsprechende Erfahrungen weiterentwickelt und verbessert werden können." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:MedicalProductDevelopment.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="MedicalProductDevelopment" />
+    </element>
+    <element id="Extension.extension:MedicalProductDevelopment.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:Statistic">
+      <path value="Extension.extension" />
+      <sliceName value="Statistic" />
+      <short value="Statistische Auswertung" />
+      <definition value="Bei der Freigabe von Daten zur statistischen Auswertung werden diese zur Erstellung von Statistiken durch staatlich anerkannte Institutionen (Statistische Bundesamt, Robert-Koch-Institut) herangezogen. Jene Statistiken stellen einen wichtigen Beitrag zu einer demokratischen Gesellschaft dar, da diese der Regierung, der Wirtschaft und der Öffentlichkeit Informationenüber die soziale und epidemiologische Lage, die demographische Entwicklung und den Gesundheitszustand der Bevölkerung liefern." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:Statistic.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="Statistic" />
+    </element>
+    <element id="Extension.extension:Statistic.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://example.org/fhir/StructureDefinition/ScopeExtension" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
